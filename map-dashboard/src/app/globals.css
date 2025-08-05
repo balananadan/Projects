@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ant Design imports */
+@import 'antd/dist/reset.css';
+
+/* Custom styles */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Fix for Leaflet popup z-index */
+.leaflet-popup-pane {
+  z-index: 1000 !important;
+}
+
+/* Custom drawing point styles */
+.drawing-point {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ant-layout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+/* Timeline slider customizations */
+.rc-slider-handle {
+  opacity: 0.9;
+}
+
+.rc-slider-handle:hover {
+  opacity: 1;
+}
+
+.rc-slider-track {
+  background: linear-gradient(90deg, #1890ff 0%, #40a9ff 100%);
+}
+
+/* Polygon popup styles */
+.leaflet-popup-content {
+  margin: 8px 12px;
+  line-height: 1.4;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.leaflet-popup-content button {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.leaflet-popup-content button:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
